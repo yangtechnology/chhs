@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
+            // 標示這是聯絡表單
+            formData.append('formType', 'contact');
 
             fetch('https://script.google.com/macros/s/AKfycbzmrz5AJDC5jWTas6D8DQP3H5bkM5JxcQggIEMunazJLwM8s_M_iuxGzEFfjyfoVR8c/exec', {
                 method: 'POST',
@@ -60,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.disabled = true;
 
             const formData = new FormData(joinForm);
+            // 標示這是加入我們表單
+            formData.append('formType', 'join');
 
             fetch('https://script.google.com/macros/s/AKfycbzmrz5AJDC5jWTas6D8DQP3H5bkM5JxcQggIEMunazJLwM8s_M_iuxGzEFfjyfoVR8c/exec', {
                 method: 'POST',
