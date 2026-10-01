@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+:root {
+    --dark-bg: #111111;
+    --light-bg: #FAFAFA;
+    --white: #FFFFFF;
+    --accent-gold: #C5A059;
+    --text-dark: #222222;
+    --text-light: #E0E0E0;
+    --text-gray: #777777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, .logo, .serif {
+    font-family: 'Noto Serif TC', serif;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ----- Navigation ----- */
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 非首頁的導覽列有深色底，才不會被白底蓋住白字 */
+.navbar.solid-nav {
+    position: relative;
+    background-color: var(--dark-bg);
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-gold);
+    opacity: 1;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ----- Hero Section (Cinematic - Style C) ----- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(17,17,17,0.5), rgba(17,17,17,0.9)), 
+                url('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    letter-spacing: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: #CCCCCC;
+    margin-bottom: 3rem;
+}
+
+/* ----- Page Header (For Inner Pages) ----- */
+.page-header {
+    background-color: var(--light-bg);
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    color: var(--dark-bg);
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+.page-header p {
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* ----- Content Sections (Minimalist - Style B) ----- */
+.section {
+    padding: 6rem 2rem;
+    background-color: var(--white);
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.serif-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.art-image {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+    margin: 3rem 0;
+}
+
+.art-image:hover {
+    filter: grayscale(0%);
+}
+
+/* ----- Buttons ----- */
+.btn {
+    display: inline-block;
+    padding: 15px 45px;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    background: transparent;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+/* ----- Event Grid (Minimalist) ----- */
+.event-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-item {
+    display: flex;
+    padding: 3rem 0;
+    border-bottom: 1px solid #EEEEEE;
+    align-items: center;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    flex: 0 0 150px;
+    text-align: left;
+}
+
+.event-date .day {
+    font-size: 4rem;
+    font-family: 'Noto Serif TC', serif;
+    color: var(--dark-bg);
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px;
+}
+
+.event-details {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.event-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.event-details p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* ----- Form (Minimalist) ----- */
+.minimal-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 2.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid #CCCCCC;
+    background: transparent;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--dark-bg);
+}
+
+.form-control::placeholder {
+    color: #AAAAAA;
+    font-weight: 300;
+}
+
+.submit-wrap {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.form-status {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* ----- Footer ----- */
+.footer {
+    background-color: var(--dark-bg);
+    color: #666666;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--dark-bg);
+        padding: 2rem 0;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .event-details {
+        padding-left: 0;
+        margin-top: 1.5rem;
+    }
+}
