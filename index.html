@@ -4,37 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>壯我管樂團 Zhuangwo Wind Band</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- 透明底的導覽列 (配合全螢幕圖片) -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">壯我管樂團</a>
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 15px;">
+                <img src="assets/main_logo.jpg" alt="Logo" style="height: 45px; width: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.5);"> 壯我管樂團
+            </a>
             <div class="menu-toggle">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">首頁</a></li>
                 <li><a href="about.html">關於我們</a></li>
+                <li><a href="conductor.html">指揮介紹</a></li>
+                <li><a href="instruments.html">樂器介紹</a></li>
                 <li><a href="events.html">近期演出</a></li>
+                <li><a href="join.html">加入我們</a></li>
                 <li><a href="contact.html">聯絡我們</a></li>
             </ul>
         </div>
     </nav>
-
-    <!-- 史詩感滿版首頁視覺 (Style C 氛圍) -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>THE POWER OF SOUND</h1>
-            <p>深邃、激昂、撼動人心。歡迎來到壯我管樂團的音樂世界。</p>
-            <a href="about.html" class="btn">探索我們的故事</a>
+    <header class="hero" style="background-image: linear-gradient(rgba(10,10,10,0.5), rgba(10,10,10,0.5)), url('assets/hero_bg.png');">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <img src="assets/main_logo.jpg" alt="壯我管樂團 Logo" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 2rem; box-shadow: 0 15px 40px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.2);">
+            <h1>SOUND OF SOUL</h1>
+            <p>用音符刻畫時光，以管樂撼動靈魂</p>
         </div>
+        <div class="scroll-indicator">SCROLL DOWN<br>↓</div>
     </header>
-
+    <section class="section bg-white">
+        <div class="container-sm" data-aos="fade-up">
+            <h2 class="serif quote-text">「每一次的呼吸與吹奏，<br>都是我們與觀眾靈魂交匯的瞬間。」</h2>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container split-layout">
+            <div class="split-img" data-aos="fade-right">
+                <img src="assets/performance.jpg" alt="樂團演出">
+            </div>
+            <div class="split-text" data-aos="fade-left" data-aos-delay="200">
+                <h2 class="serif">關於壯我</h2>
+                <p>我們結合古典與現代，打破傳統管樂的框架。由一群充滿熱忱的樂手組成，致力於將最純粹的感動，傳遞到每一位聽眾的耳中與心中。</p>
+                <a href="about.html" class="btn">探索我們的故事</a>
+            </div>
+        </div>
+    </section>
+    <section class="section bg-dark">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 1.5rem;">NEXT PERFORMANCE</h2>
+            <p style="color: #AAA; margin-bottom: 3rem;">準備好迎接下一場聽覺盛宴了嗎？</p>
+            <a href="events.html" class="btn btn-light">查看近期演出</a>
+        </div>
+    </section>
     <footer class="footer">
-        <p>&copy; 2026 壯我管樂團 ZHUANGWO WIND BAND. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2026 忠信壯我管樂團 ZHUANGWO WIND BAND. ALL RIGHTS RESERVED.</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

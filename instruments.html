@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樂器介紹 | 忠信壯我管樂團</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tabs-container { max-width: 1100px; margin: 0 auto 4rem auto; }
+        .tab-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 4rem; }
+        .tab-btn { padding: 15px 40px; background: var(--light-bg); border: 2px solid transparent; border-radius: 50px; cursor: pointer; font-size: 1.1rem; font-family: 'Noto Serif TC', serif; letter-spacing: 2px; transition: all 0.3s ease; color: var(--text-gray); }
+        .tab-btn:hover, .tab-btn.active { border-color: var(--accent-gold); color: var(--dark-bg); background: var(--white); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1); }
+        .tab-content { display: none; animation: fadeIn 0.6s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .inst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2.5rem; }
+        .inst-item { background: var(--white); border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.3s ease; }
+        .inst-item:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        
+        /* 佔位圖與照片共用樣式 */
+        .inst-photo { 
+            width: 100%; height: 200px; 
+            background-color: #111;
+            background-image: linear-gradient(135deg, #111, #222); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 3px solid var(--accent-gold); 
+            display: flex; align-items: center; justify-content: center; 
+            position: relative; overflow: hidden;
+        }
+        .inst-photo[data-name]::after {
+            content: attr(data-name);
+            position: absolute;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            transform: rotate(-5deg) scale(1.1);
+            white-space: nowrap;
+            font-family: 'Times New Roman', serif;
+            pointer-events: none;
+        }
+        .placeholder-text {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            z-index: 1;
+            opacity: 0.7;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        .inst-text { padding: 2rem; }
+        .inst-text h4 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark-bg); font-family: 'Noto Serif TC', serif; }
+        .inst-text p { font-size: 0.95rem; color: #555; line-height: 1.8; text-align: justify; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 15px;">
+                <img src="assets/main_logo.jpg" alt="Logo" style="height: 45px; width: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.5);"> 壯我管樂團
+            </a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="conductor.html">指揮介紹</a></li>
+                <li><a href="instruments.html" class="active">樂器介紹</a></li>
+                <li><a href="events.html">近期演出</a></li>
+                <li><a href="join.html">加入我們</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="page-header" data-aos="fade-in">
+        <h1>樂器介紹</h1>
+        <p>Our Instruments</p>
+    </header>
+    <section class="section bg-white">
+        <div class="container tabs-container" data-aos="fade-up">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'woodwinds')">木管樂器</button>
+                <button class="tab-btn" onclick="openTab(event, 'brass')">銅管樂器</button>
+                <button class="tab-btn" onclick="openTab(event, 'percussion')">打擊樂器</button>
+            </div>
+            
+            <!-- 木管樂器 -->
+            <div id="woodwinds" class="tab-content active">
+                <div class="inst-grid">
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/flute.png');"></div>
+                        <div class="inst-text">
+                            <h4>長笛 (Flute)</h4>
+                            <p>音色清澈高雅，如同鳥鳴般靈動。在樂團中經常負責主旋律與華麗的裝飾奏，是木管家族中最敏捷的樂器之一。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/oboe.png');"></div>
+                        <div class="inst-text">
+                            <h4>雙簧管 (Oboe)</h4>
+                            <p>音色帶有獨特的田園風味與溫柔的鼻音，極具穿透力，常在樂團中負責優美的抒情獨奏，也是樂團調音的基準樂器。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/clarinet.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>單簧管 (Clarinet)</h4>
+                            <p>音域極為寬廣，音色圓潤且表情豐富。在管樂團中的地位等同於交響樂團中的小提琴，是最重要的旋律樂器與聲部骨幹。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/saxophone.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>薩克斯風 (Saxophone)</h4>
+                            <p>分為中音、次中音與上低音等。由金屬製成卻使用單簧片發聲，完美結合了木管的靈活與銅管的爆發力，音色極具現代感。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/bassoon.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>低音管 (Bassoon)</h4>
+                            <p>體積龐大的雙簧樂器，音色幽默帶點沙啞，能表現深沉的情感，也常在樂曲中負責詼諧的跳躍低音或特殊效果。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 銅管樂器 -->
+            <div id="brass" class="tab-content">
+                <div class="inst-grid">
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/trumpet.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>小號 (Trumpet)</h4>
+                            <p>銅管樂器中音域最高的樂器。音色宏亮、銳利且輝煌，常在樂曲高潮處吹奏極具號召力的英雄式旋律。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/french-horn.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>法國號 (French Horn)</h4>
+                            <p>擁有獨特的圓錐形管身與迷宮般的管線。音色溫潤柔和，能完美融合木管與銅管的聲音，被譽為樂團的「黏著劑」。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/trombone.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>長號 (Trombone)</h4>
+                            <p>利用滑管來改變音高的樂器。音色莊嚴飽滿，滑音效果極具特色，三把長號的合奏常被形容為「上帝的聲音」。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/euphonium.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>上低音號 (Euphonium)</h4>
+                            <p>名字源自希臘文「好聽的聲音」。音色柔和寬廣、如同男中音般溫暖，在管樂團中常擔任極為吃重的副旋律或優美獨奏。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/tuba.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>低音號 (Tuba)</h4>
+                            <p>體積最大、音域最低的銅管樂器。發出深沉如地基般的低音，是支撐整個樂團和聲與節奏的最重要基石。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 打擊樂器 -->
+            <div id="percussion" class="tab-content">
+                <div class="inst-grid">
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/timpani.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>定音鼓 (Timpani)</h4>
+                            <p>少數能發出明確音高的打擊樂器。外型如巨大的銅鍋，音色渾厚深沉，是掌控樂團戲劇張力與節奏動力的關鍵角色。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/snare-drum.png');"></div>
+                        <div class="inst-text">
+                            <h4>小鼓 (Snare Drum)</h4>
+                            <p>底部裝有響弦，音色清脆響亮。無論是輕巧的節奏點綴，還是軍樂般密集的輪擊，都能為樂曲帶來極佳的推動力。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/mallets.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>鍵盤樂器 (Mallet Percussion)</h4>
+                            <p>包含馬林巴木琴、鐵琴、鐘琴等。透過不同材質的琴槌敲擊，能奏出如流水般華麗的旋律，為樂團增添豐富的色彩。</p>
+                        </div>
+                    </div>
+                    <div class="inst-item">
+                        <div class="inst-photo" style="background-image: url('assets/bass-drum-cymbals.jpg');"></div>
+                        <div class="inst-text">
+                            <h4>大鼓與鈸 (Bass Drum & Cymbals)</h4>
+                            <p>大鼓提供震撼心魄的低頻重音，鈸則在樂曲最高潮時發出耀眼的光芒與聲響，兩者搭配是營造磅礴氣勢的絕佳組合。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2026 忠信壯我管樂團 ZHUANGWO WIND BAND. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

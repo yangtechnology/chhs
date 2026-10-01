@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 | 忠信壯我管樂團</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .history-gallery { display: flex; gap: 2rem; margin: 4rem 0; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .history-img-wrapper { flex: 1; min-width: 300px; max-width: 500px; text-align: center; }
+        .history-img-wrapper img { width: 100%; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 8px solid var(--white); transition: transform 0.5s ease; }
+        .vintage-filter { filter: sepia(0.3) contrast(1.1) brightness(0.95); }
+        .history-img-wrapper img:hover { transform: translateY(-5px); filter: none; }
+        .img-caption { color: #888; font-size: 0.9rem; margin-top: 1.5rem; letter-spacing: 1px; font-family: 'Noto Serif TC', serif; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 15px;">
+                <img src="assets/main_logo.jpg" alt="Logo" style="height: 45px; width: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.5);"> 壯我管樂團
+            </a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html" class="active">關於我們</a></li>
+                <li><a href="conductor.html">指揮介紹</a></li>
+                <li><a href="instruments.html">樂器介紹</a></li>
+                <li><a href="events.html">近期演出</a></li>
+                <li><a href="join.html">加入我們</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="page-header" data-aos="fade-in" data-aos-duration="1500">
+        <h1>關於我們</h1>
+        <p>Our History</p>
+    </header>
+    <section class="section bg-white">
+        <div class="container-sm">
+            <div data-aos="fade-up">
+                <h2 class="serif" style="font-size: 2.2rem; text-align: center; margin-bottom: 2rem;">樂團歷史沿革</h2>
+                <p style="color: #444; font-size: 1.15rem; margin-bottom: 1.5rem; text-align: justify; line-height: 2;">忠信管樂團成立於 2003 年 9 月，於 2012 年 3 月 29 日，忠信 43 週年校慶日正式宣誓授旗成軍，並由忠信學校前校長高天極老師親自授旗並正名為<strong>「忠信壯我管樂團」</strong>。</p>
+                <p style="color: #444; font-size: 1.15rem; margin-bottom: 2rem; text-align: justify; line-height: 2;">壯我管樂團是由一群熱愛管樂的同學所組成，團員來自全校各班，經甄選後加入樂團，樂團的中心思想是發揚忠信「樂觀奮鬥‧允執厥中」的校訓精神。</p>
+                <blockquote style="background: var(--light-bg); border-left: 5px solid var(--accent-gold); padding: 2.5rem; margin: 4rem 0; font-family: 'Noto Serif TC', serif; font-size: 1.1rem; color: var(--dark-bg); line-height: 2; text-align: justify; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);" data-aos="fade-left">
+                    <strong style="font-size: 1.3rem; color: var(--accent-gold);">宣誓授旗之誓辭曰：</strong><br><br>
+                    《西曆 2012 年，歲在壬辰，忠信四十二週歲之當日，忠信壯我軍樂團 55 名團員在此莊嚴宣誓：<br><br>
+                    從今天開始，我們的名字叫壯我；「江山霧裡」迴盪著我們的號角，「渡頭霜雪」印刻著我們的名字；我們永遠不辜負我們的名字，不或忘壯我的思想、壯我的精神、壯我的體魄。<br><br>
+                    我們今日是一個團體，我們永遠是一個團體，我們共同用音樂寫下忠信艱辛的歷史，用汗水譜出忠信美麗的樂章。》
+                </blockquote>
+            </div>
+            <div class="history-gallery">
+                <div class="history-img-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/logo.png" alt="授旗典禮旗面設計" style="max-width: 350px;">
+                    <p class="img-caption">授旗典禮專屬旗面設計</p>
+                </div>
+                <div class="history-img-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/history.png" alt="授旗典禮" class="vintage-filter">
+                    <p class="img-caption">2012 年 3 月 29 日 宣誓授旗成軍大典</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2026 忠信壯我管樂團 ZHUANGWO WIND BAND. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

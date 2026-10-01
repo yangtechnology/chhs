@@ -1,52 +1,82 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Mobile Menu Toggle
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function() {
+    // AOS Initialization
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
 
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     }
 
-    // 2. Google Apps Script Form Submission (Only executes on contact.html)
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const formStatus = document.getElementById('form-status');
-    
-    // User's GAS URL
-    const gasUrl = 'https://script.google.com/macros/s/AKfycbzmrz5AJDC5jWTas6D8DQP3H5bkM5JxcQggIEMunazJLwM8s_M_iuxGzEFfjyfoVR8c/exec';
-
-    if (form) {
-        form.addEventListener('submit', e => {
-            e.preventDefault(); 
+    // Contact Form Submission (GAS API)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
             
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'SENDING...';
-            formStatus.innerHTML = '';
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = '傳送中...';
+            btn.disabled = true;
 
-            const formData = new FormData(form);
+            const formData = new FormData(contactForm);
 
-            fetch(gasUrl, {
+            fetch('https://script.google.com/macros/s/AKfycbzmrz5AJDC5jWTas6D8DQP3H5bkM5JxcQggIEMunazJLwM8s_M_iuxGzEFfjyfoVR8c/exec', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => {
-                if (response.ok) {
-                    form.reset(); 
-                    formStatus.innerHTML = '<span style="color: #C5A059;">訊息已成功送出。我們會盡快與您聯繫。</span>';
-                } else {
-                    throw new Error('Network response was not ok');
-                }
+            .then(response => response.text())
+            .then(data => {
+                alert('訊息已成功送出！我們將盡快與您聯繫。');
+                contactForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
             })
             .catch(error => {
-                console.error('Error:', error);
-                formStatus.innerHTML = '<span style="color: #dc3545;">發送失敗，請稍後再試。</span>';
+                alert('傳送失敗，請稍後再試。');
+                console.error('Error!', error.message);
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+        });
+    }
+
+    // Join Form Submission (GAS API)
+    const joinForm = document.getElementById('join-form');
+    if (joinForm) {
+        joinForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const btn = joinForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = '傳送中...';
+            btn.disabled = true;
+
+            const formData = new FormData(joinForm);
+
+            fetch('https://script.google.com/macros/s/AKfycbzmrz5AJDC5jWTas6D8DQP3H5bkM5JxcQggIEMunazJLwM8s_M_iuxGzEFfjyfoVR8c/exec', {
+                method: 'POST',
+                body: formData
             })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerText = 'SEND MESSAGE';
+            .then(response => response.text())
+            .then(data => {
+                alert('報名表單已成功送出！我們將盡快與您聯繫。');
+                joinForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            })
+            .catch(error => {
+                alert('傳送失敗，請稍後再試。');
+                console.error('Error!', error.message);
+                btn.textContent = originalText;
+                btn.disabled = false;
             });
         });
     }

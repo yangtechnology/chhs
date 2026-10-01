@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 | 忠信壯我管樂團</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 15px;">
+                <img src="assets/main_logo.jpg" alt="Logo" style="height: 45px; width: 45px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.5);"> 壯我管樂團
+            </a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="conductor.html">指揮介紹</a></li>
+                <li><a href="instruments.html">樂器介紹</a></li>
+                <li><a href="events.html">近期演出</a></li>
+                <li><a href="join.html">加入我們</a></li>
+                <li><a href="contact.html" class="active">聯絡我們</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="page-header" data-aos="fade-in">
+        <h1>聯絡我們</h1>
+        <p>Contact & Booking</p>
+    </header>
+    <section class="section bg-white">
+        <div class="container-sm" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" class="minimal-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="姓名 / 單位名稱 Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="電子郵件 Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" class="form-control" required placeholder="訊息內容 Message"></textarea>
+                </div>
+                <div class="submit-wrap">
+                    <button type="submit" class="btn" id="submit-btn">SEND MESSAGE</button>
+                    <div id="form-status" class="form-status"></div>
+                </div>
+            </form>
+            <div style="margin-top: 4rem; text-align: center;" data-aos="fade-up">
+                <a href="https://www.instagram.com/orchestra.chhs?stkn=bGhvOHlvYzMxaHdk" target="_blank" class="ig-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    追蹤我們的 Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2026 忠信壯我管樂團 ZHUANGWO WIND BAND. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
